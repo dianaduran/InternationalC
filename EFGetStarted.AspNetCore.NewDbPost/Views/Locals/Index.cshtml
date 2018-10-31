@@ -1,0 +1,103 @@
+﻿@model IEnumerable<EFGetStarted.AspNetCore.NewDbPost.Models.Local>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+    <table class="table table-bordred table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SpaceID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SquareFoot)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PricebySF)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MonthlyPayment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnnualPayment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Deposit)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BussinesName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ContractStart)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ContractEnd)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NameOwner)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Company)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpaceID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SquareFoot)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PricebySF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MonthlyPayment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnnualPayment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Deposit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BussinesName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContractStart)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContractEnd)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NameOwner)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Company.Name)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.LocalId" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span></a> 
+                        <a asp-action="Details" asp-route-id="@item.LocalId" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-search"></span></a> 
+                        <a asp-action="Delete" asp-route-id="@item.LocalId" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

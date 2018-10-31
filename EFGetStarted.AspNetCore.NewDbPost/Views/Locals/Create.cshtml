@@ -1,0 +1,88 @@
+﻿@model EFGetStarted.AspNetCore.NewDbPost.Models.Local
+
+@{
+    ViewData["Title"] = "Create";
+
+}
+
+
+
+<h2>Create</h2>
+
+<h4>Local</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SpaceID" class="control-label"></label>
+                <input asp-for="SpaceID" class="form-control" />
+                <span asp-validation-for="SpaceID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SquareFoot" class="control-label"></label>
+                <input asp-for="SquareFoot" class="form-control" />
+                <span asp-validation-for="SquareFoot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PricebySF" class="control-label"></label>
+                <input asp-for="PricebySF" class="form-control" />
+                <span asp-validation-for="PricebySF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MonthlyPayment" class="control-label"></label>
+                <input asp-for="MonthlyPayment" class="form-control" name="MonthlyPayment" />
+                <span asp-validation-for="MonthlyPayment" class="text-danger"></span>
+            </div>
+         
+           @* <input asp-for="AnnualPayment" type="hidden" class="form-control" value=ViewData["AnnualPayment"] />*@
+            
+            <div class="form-group">
+                <label asp-for="Deposit" class="control-label"></label>
+                <input asp-for="Deposit" class="form-control" />
+                <span asp-validation-for="Deposit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BussinesName" class="control-label"></label>
+                <input asp-for="BussinesName" class="form-control" />
+                <span asp-validation-for="BussinesName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractStart" class="control-label"></label>
+                <input asp-for="ContractStart" type="date" class="form-control" />
+                <span asp-validation-for="ContractStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractEnd" class="control-label"></label>
+                <input asp-for="ContractEnd" type="date" class="form-control" />
+                <span asp-validation-for="ContractEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NameOwner" class="control-label"></label>
+                <input asp-for="NameOwner" class="form-control" />
+                <span asp-validation-for="NameOwner" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyId" class="control-label"></label>
+                <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
